@@ -1,0 +1,51 @@
+body{
+  background: silver;
+}
+.container-fluid{
+  background: white;
+  max-width: 700px;
+  margin: 150px auto;
+  border: 5px solid yellow;  
+}
+.drum-pad{
+  padding: 15px;
+  width: 60px;
+  height: 60px;
+  box-shadow: 1px 1px 2px 2px black;
+  border-radius: 5px;
+  font-size: 25px;
+  align-items:center;
+  margin:10px;
+}
+.drum-pad:hover{
+  cursor:pointer;
+}
+.container-fluid p{
+  text-align:right;
+  margin:2px 3px 10px 0;
+  font-size: 25px;
+  font-style: italic;
+  font-family: Impact;
+}
+.middle{
+  max-width: 320px;
+}
+.resize{
+  display:flex;
+  flex-direction: row;
+}
+.controller{
+  background:"blue";
+  width:"400px";
+  font-size: 20px;
+  
+}
+.center{
+  margin:0 auto;
+  align-items:center;
+}
+.box{
+  border: 3px solid white;
+  height: 35px;
+  background: silver;
+}
