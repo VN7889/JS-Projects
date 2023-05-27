@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" href="./styles.css">
+    <title>JS DOCUMENTS</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header class="navbar">JS DOCUMENTS</header>
+      <ul class="navbar">
+        <li><a class="nav-link" href="#introduction">INTRODUCTION</a></li>
+        <li><a class="nav-link" href="#javascript_and_java">JAVASCRIPT AND JAVA</a></li>
+        <li><a class="nav-link" href="#hello_world">HELLO WORLD</a></li>
+        <li><a class="nav-link" href="#variables">VARIABLES</a></li>
+        <li><a class="nav-link" href="#constants">CONSTANTS</a></li>
+        <li><a class="nav-link" href="#data_types">DATA TYPES</a></li>
+      </ul>
+    </nav>
+  <main id="main-doc">
+    <section class="main-section" id="introduction">
+      <header><u>INTRODUCTION</u></header>
+      <p>Hello everyone, I'am going to discuss about Javascript.</p>
+      <ul>
+        <li>This is the page for the documentation about Javascript programming language.</li>
+      </ul>
+      <p>Topics that will be covered in this website.</p>
+      <ul>
+        <li>Let's begin with the course javascript there are few basic topics with explanation.<br>
+         Topics such as:<br>
+         <ul>
+         <li>- JAVASCRIPT AND JAVA</li>
+         <li>- HELLO WORLD</li>
+         <li>- VARIABLES</li>
+         <li>- CONSTANTS</li>
+         <li>- DATA TYPES</li>
+         </ul>
+        </li>
+      </ul>
+    </section>
+    <section class="main-section" id="javascript_and_java">
+      <header><u>JAVASCRIPT AND JAVA</u></header>
+      <p>JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript.</p>
+      <p>JavaScript is a very free-form language compared to Java. You do not have to declare all variables, classes, and methods. You do not have to be concerned with whether methods are public, private, or protected, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.</p>
+      </section>
+    <section class="main-section" id="hello_world">
+      <header><u>HELLO WORLD</u></header>
+      <p>To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code:</p>
+      <div><code>function greetMe(yourName) { alert("Hello " + yourName); }</code><br>
+<code>greetMe("World");</code></div>
+  <p>Select the code in the pad and hit Ctrl+R to watch it unfold in your browser!</p>
+    </section>
+    <section class="main-section" id="variables">
+      <header><u>VARIABLES</u></header>
+      <p>You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules.A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).</p>
+      <p>You can declare a variable in three ways:</p>
+<p>With the keyword var. For example</p>
+<div><code>var x = 42.</code></div>
+<p>This syntax can be used to declare both local and global variables.</p>
+
+<p>By simply assigning it a value. For example,</p>
+<div><code>x=42</code></div>
+<p>This always declares a global variable. It generates a strict JavaScript warning. You shouldn't use this variant.</p>
+
+<p>With the keyword let. For example</p>
+<div><code>let y = 13.</code><div>
+    </section>
+    <section class="main-section"id="constants">
+      <header><u>CONSTANTS</u></header>
+      <p>You can create a read-only, named constant with the const keyword. The syntax of a constant identifier is the same as for a variable identifier: it must start with a letter, underscore or dollar sign and can contain alphabetic, numeric, or underscore characters.</p>
+
+<div><code>const PI = 3.14;</code></div>
+<p>A constant cannot change value through assignment or be re-declared while the script is running. It has to be initialized to a value.</p>
+
+<p>The scope rules for constants are the same as those for let block scope variables. If the const keyword is omitted, the identifier is assumed to represent a variable.</p>
+
+<p>You cannot declare a constant with the same name as a function or variable in the same scope. For example:</p>
+
+<div><p><code>// THIS WILL CAUSE AN ERROR <br>function f() {}; const f = 5;<br> // THIS WILL CAUSE AN ERROR ALSO<br> 
+  function f() { const g = 5; var g;
+//statements }<code></p></div>
+
+<p>However, object attributes are not protected, so the following statement is executed without problems.</p>
+const MY_OBJECT = {"key": "value"}; MY_OBJECT.key =
+"otherValue";
+    </section>
+    <section class="main-section"id="data_types">
+      <header><u>DATA TYPES</u></header>
+      <p>The latest ECMAScript standard defines seven data types:</p>
+      <ul>
+        <li>Six data types that are primitives:</li>
+        <ul>
+          <li>Boolean. true and false.</li>
+
+<li>null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is not the same as Null, NULL, or any other variant.</li>
+<li>undefined. A top-level property whose value is undefined.</li>
+<li>Number. 42 or 3.14159.</li>
+<li>String. "Howdy"</li>
+<li>Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.</li>
+        </ul>
+        <li>Objects</li>
+        </ul>
+<p>Although these data types are a relatively small amount, they enable you to perform useful functions with your applications. Objects and functions are the other fundamental elements in the language. You can think of objects as named containers for values, and functions as procedures that your application can perform.
+</p>
+    </section>
+  </main>
+  </body>
+</html>
