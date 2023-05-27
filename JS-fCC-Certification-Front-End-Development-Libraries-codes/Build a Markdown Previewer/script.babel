@@ -1,0 +1,116 @@
+import React from 'https://esm.sh/react@18.2.0'
+import ReactDOM from 'https://esm.sh/react-dom@18.2.0'
+
+marked.setOptions({
+  breaks:true,
+});
+
+const renderer= new marked.Renderer();
+renderer.link = function (href, title, text) {
+  return `<a target="_blank" href="${href}">${text}` + '</a>';
+}
+
+class ControlledInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: default_text,
+      editorSize: true,
+      previewSize: true
+    };
+    this.handleChange= this.handleChange.bind(this);
+    this.editorMax= this.editorMax.bind(this);
+    this.previewMax= this.previewMax.bind(this);
+  }
+  handleChange(event){
+    this.setState({
+      input: event.target.value
+    });
+  }
+  editorMax(){
+    this.setState({
+        editorSize: !this.state.editorSize
+    });
+  }
+  previewMax(){
+    this.setState({
+        previewSize: !this.state.previewSize
+    });
+  }
+  render() {
+    const edit_min_max= this.state.editorSize? 
+    ["fa fa-arrows-alt","editor"]:["fa fa-compress","editormax"]
+    const height_min_max= this.state.previewSize?
+    ["fa fa-arrows-alt","heading1","preview"]:["fa fa-compress","heading1max","previewmax"]
+    return (
+      <div>
+        <div id="heading">
+          <i class="fab fa-free-code-camp"> Editor</i>
+          <i className={edit_min_max[0]} onClick={this.editorMax}></i>
+        </div>
+        <div id="editor1">
+        <textarea className={edit_min_max[1]} id="editor" value={this.state.input} 
+        onChange={this.handleChange} >
+          </textarea>
+        </div>
+        <br />
+        <div className= {height_min_max[1]} id="heading1">
+          <i class="fab fa-free-code-camp"> Preview</i>
+          <i className= {height_min_max[0]} onClick={this.previewMax}></i>
+        </div>
+          <div className={height_min_max[2]} id="preview" dangerouslySetInnerHTML={{__html: marked(this.state.input,{renderer:renderer})}}>
+          </div>
+      </div>
+    );
+  }
+};
+
+const default_text=
+          `# Welcome to my React Markdown Previewer!
+
+## This is a sub-heading...
+### And here's some other cool stuff:
+  
+Heres some code, \`<div></div>\`, between 2 backticks.
+
+\`\`\`
+// this is multi-line code:
+
+function anotherExample(firstLine, lastLine) {
+  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
+    return multiLineCode;
+  }
+}
+\`\`\`
+  
+You can also make text **bold**... whoa!
+Or _italic_.
+Or... wait for it... **_both!_**
+And feel free to go crazy ~~crossing stuff out~~.
+
+There's also [links](https://www.freecodecamp.com), and
+> Block Quotes!
+
+And if you want to get really crazy, even tables:
+
+Wild Header | Crazy Header | Another Header?
+------------ | ------------- | ------------- 
+Your content can | be here, and it | can be here....
+And here. | Okay. | I think we get it.
+
+- And of course there are lists.
+  - Some are bulleted.
+     - With different indentation levels.
+        - That look like this.
+
+
+1. And there are numbererd lists too.
+1. Use just 1s if you want! 
+1. But the list goes on...
+- Even if you use dashes or asterisks.
+* And last but not least, let's not forget embedded images:
+
+![React Logo w/ Text](https://goo.gl/Umyytc)
+`
+
+ReactDOM.render(<ControlledInput/>,document.querySelector("#ta"));
