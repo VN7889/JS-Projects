@@ -1,0 +1,47 @@
+import React from 'https://esm.sh/react@18.2.0'
+import ReactDOM from 'https://esm.sh/react-dom@18.2.0'
+
+class RandomQuote extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      randomIndex: ''
+    };
+    this.ask = this.ask.bind(this);
+  }
+  ask() {
+      this.setState({
+        randomIndex: Math.floor(Math.random() * 5)
+      });
+  }
+  render() {
+    let body = document.body;
+const bgColor=['red', 'blue', 'green', 'yellow', 'skyblue'];
+    const possibleAnswers = {
+      quote:["'To live is the rarest thing in the world. Most people exist, that is all.'",
+      "That it will never come again is what makes life so sweet.",
+      "It is never too late to be what you might have been.",
+      "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+      "Pain is inevitable. Suffering is optional."],
+      author:["Oscar Wilde"," Emily Dickinson","George Eliot","Ralph Waldo Emerson","Haruki Murakami"]
+    };
+    const answer = possibleAnswers['quote'][this.state.randomIndex];
+    const answer1 = possibleAnswers['author'][this.state.randomIndex];
+    return (
+      body.style.backgroundColor = bgColor [this.state.randomIndex],
+      <div>
+        <div className="text-center"id="q"> 
+    <i className="fa fa-quote-left"></i> <span id="text">{answer}</span>
+    </div>
+  <div className="text-left"id="a"><p id="author">-{answer1}</p></div>
+  <div className="row text-center">
+    <div className="col-sm-6"><a href="twitter.com/intent/tweet" rel="twitter" target="_blank" id="tweet-quote"><button style={{background:bgColor [this.state.randomIndex]}}><i className="fab fa-twitter"></i></button></a></div>
+    <div className="col-sm-6" id="new-quote">
+      <button onClick={this.ask} style={{background:bgColor [this.state.randomIndex]}}>New Quote!!</button>
+    </div>
+    </div>
+    </div>
+    );
+  }
+}
+ReactDOM.render(<RandomQuote/>, document.querySelector("#quote-box"));
