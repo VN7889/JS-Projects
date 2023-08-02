@@ -106,8 +106,8 @@ import * as bootstrap from "https://cdn.skypack.dev/bootstrap@5.2.3";
     const audiolist0=[""];
     const audiolist1= audiofiles1.map(c =>(<Pad c={c} volume={volume} setRecording={setRecording}/>));
     const audiolist2= audiofiles2.map(c=>(<Pad c={c} volume={volume} setRecording={setRecording}/>));
-    const audiolist3= audiofiles1.map(c =>(<Pad c={c}/>));
-    const audiolist4= audiofiles2.map(c=>(<Pad c={c}/>));
+    const audiolist3= audiofiles1.map(c =>(<Pad c={c} volume={volume} setRecording={setRecording}/>));
+    const audiolist4= audiofiles2.map(c=>(<Pad c={c} volume={volume} setRecording={setRecording}/>));
     const [list,setList]= React.useState(true);
     const listAccess=()=>{
       setList(!list);
